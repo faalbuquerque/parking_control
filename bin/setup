@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative 'wizard'
+
+Wizard.show_splash
+Wizard.run_containers_generate
+Wizard.run_database_generate
+
+Wizard.run_closure
