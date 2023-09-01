@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
+# Contêm todas as configs necessárias para rodar o projeto
 class Wizard
   MESSAGES = [
-    'Criando containers', 'Gerando Banco de Dados', 'Finalizado!'].freeze
+    'Criando containers', 'Gerando Banco de Dados', 'Startando aplicação', 'Finalizado!'
+  ].freeze
 
   LARGER_MSG = MESSAGES.max do |a, b|
     next -1 if a > b
@@ -30,7 +34,6 @@ class Wizard
     display_time_to_process(final, start)
   end
 
-
   def self.run_database_generate
     puts MESSAGES[1].center(MARGIN, '=')
     start = Time.now
@@ -39,6 +42,14 @@ class Wizard
     `sleep 2`
     `docker-compose up -d mongo-express`
     `sleep 2`
+    final = Time.now
+    display_time_to_process(final, start)
+  end
+
+  def self.start_application
+    puts MESSAGES[2].center(MARGIN, '=')
+    start = Time.now
+
     `docker-compose up -d web`
     `sleep 2`
     `clear`
