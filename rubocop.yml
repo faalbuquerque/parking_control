@@ -1,0 +1,31 @@
+require:
+  - rubocop
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2.2
+  SuggestExtensions: false
+
+AsciiComments:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Enabled: true
+  IgnoredMethods: ['describe', 'context', 'it']
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: 'compact'
+
+Style/ClassVars:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true

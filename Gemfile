@@ -8,6 +8,8 @@ gem 'webrick'
 
 gem 'mongoid', '~> 5.1', '>= 5.1.3'
 
+gem 'bigdecimal', '1.4.2'
+
 group :test, :development do
   gem 'byebug'
   gem 'rack-test', '~> 0.6.3'
